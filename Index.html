@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- STREAMING_CHUNK:Configuring document metadata and loading dependencies... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYS.101 Schedule with Staff & Locations</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Fonts (Inter & Cairo for Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* STREAMING_CHUNK:Applying custom typography and basic styles... */
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .en-text {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom scrollbar for the table wrapper */
+        .table-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .table-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased p-4 md:p-8">
+
+    <!-- STREAMING_CHUNK:Building the header and legend sections... -->
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="mb-8 text-center md:text-right flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900 mb-2">جدول مقرر PHYS.101</h1>
+                <p class="text-slate-500 font-medium">الفصل الدراسي الخريفي 2026-2027 • شامل هيئة التدريس والأماكن</p>
+            </div>
+            
+            <!-- Legend (Key) -->
+            <div class="flex gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-green-600 shadow-sm"></div>
+                    <span class="text-sm font-semibold text-slate-700">محاضرة (Lecture)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-blue-600 shadow-sm"></div>
+                    <span class="text-sm font-semibold text-slate-700">سكشن (Practical)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STREAMING_CHUNK:Creating the table structure and headers... -->
+        <!-- Table Wrapper for responsiveness -->
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto table-container w-full" dir="ltr">
+                <table class="w-full text-left border-collapse min-w-[1000px]">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 w-32">Day / Time</th>
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 1<br><span class="text-xs text-slate-300 font-normal">09:00 - 11:00</span></th>
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 2<br><span class="text-xs text-slate-300 font-normal">11:00 - 13:00</span></th>
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 3<br><span class="text-xs text-slate-300 font-normal">13:00 - 15:00</span></th>
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 4<br><span class="text-xs text-slate-300 font-normal">15:00 - 17:00</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="en-text text-sm">
+                        
+                        <!-- STREAMING_CHUNK:Rendering Saturday row with TAs and Location... -->
+                        <!-- Saturday -->
+                        <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Saturday</td>
+                            
+                            <!-- PRA F -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA F</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1430</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. عبد الرحمن كمال</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA R -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA R</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1896</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. عبد الرحمن كمال</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA O -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA O</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1439</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. عبد الرحمن كمال</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA G -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA G</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1431</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. عبد الرحمن كمال</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- STREAMING_CHUNK:Rendering Sunday row with TAs and Location... -->
+                        <!-- Sunday -->
+                        <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Sunday</td>
+                            
+                            <!-- PRA N -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA N</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1438</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. اياد علاء الدين</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. خالد سعد الدين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA C -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA C</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1427</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. محمد عبد المعتمد</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. خالد سعد الدين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA J -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA J</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1434</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. محمد عبد المعتمد</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. خالد سعد الدين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA S -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA S</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1897</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. محمد عبد المعتمد</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. خالد سعد الدين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- STREAMING_CHUNK:Rendering Monday row with TAs and Location... -->
+                        <!-- Monday -->
+                        <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Monday</td>
+                            
+                            <!-- PRA H -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA H</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1432</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. اياد علاء الدين</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- LEC 3 + PRA B -->
+                            <td class="p-3 border-l border-slate-200 align-top flex flex-col gap-3">
+                                <!-- Lecture block -->
+                                <div class="bg-green-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-green-700">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="font-bold text-lg">LEC 3</span>
+                                        <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1424</span>
+                                    </div>
+                                    <div class="text-xs opacity-90 flex flex-col gap-1 mb-2">
+                                        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 11:00 - 12:00</span>
+                                        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> 416 TH PH</span>
+                                    </div>
+                                    <!-- Dr. Name -->
+                                    <div class="bg-green-700/60 rounded p-1.5 text-sm text-right mt-1" dir="rtl">
+                                        <div class="flex items-center gap-1.5 font-bold text-green-50">
+                                            <svg class="w-4 h-4 text-green-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                            <span class="font-[Cairo] text-sm">د. محمد علي</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Section block -->
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA B</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1426</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. اياد علاء الدين</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA D -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA D</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1428</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. اياد علاء الدين</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA A -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA A</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1425</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. اياد علاء الدين</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. نيره ياسين</span></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- STREAMING_CHUNK:Rendering Tuesday row with TAs and Location... -->
+                        <!-- Tuesday -->
+                        <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Tuesday</td>
+                            
+                            <!-- PRA K -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA K</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1435</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. عبد الرحمن كمال</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. ايات منصور</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA I -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA I</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1433</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. عبد الرحمن كمال</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. ايات منصور</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- LEC 2 + PRA L -->
+                            <td class="p-3 border-l border-slate-200 align-top flex flex-col gap-3">
+                                <!-- Lecture block -->
+                                <div class="bg-green-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-green-700">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="font-bold text-lg">LEC 2</span>
+                                        <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1423</span>
+                                    </div>
+                                    <div class="text-xs opacity-90 flex flex-col gap-1 mb-2">
+                                        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 14:00 - 15:00</span>
+                                        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> 216 TH PH</span>
+                                    </div>
+                                    <!-- Dr. Name -->
+                                    <div class="bg-green-700/60 rounded p-1.5 text-sm text-right mt-1" dir="rtl">
+                                        <div class="flex items-center gap-1.5 font-bold text-green-50">
+                                            <svg class="w-4 h-4 text-green-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                            <span class="font-[Cairo] text-sm">د. محمد علي</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Section block -->
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA L</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1436</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. محمد هشام</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. ايات منصور</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA E -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA E</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1429</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. عبد الرحمن كمال</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. ايات منصور</span></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- STREAMING_CHUNK:Rendering Wednesday row... -->
+                        <!-- Wednesday -->
+                        <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Wednesday</td>
+                            
+                            <!-- LEC 1 -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-green-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-green-700">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="font-bold text-lg">LEC 1</span>
+                                        <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1422</span>
+                                    </div>
+                                    <div class="text-xs opacity-90 flex flex-col gap-1 mb-2">
+                                        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 09:00 - 10:00</span>
+                                        <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> 140 TH PH</span>
+                                    </div>
+                                    <!-- Dr. Name -->
+                                    <div class="bg-green-700/60 rounded p-1.5 text-sm text-right mt-1" dir="rtl">
+                                        <div class="flex items-center gap-1.5 font-bold text-green-50">
+                                            <svg class="w-4 h-4 text-green-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                            <span class="font-[Cairo] text-sm">د. محمد علي</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- Empty Cells -->
+                            <td class="p-3 border-l border-slate-200 bg-slate-50/50"></td>
+                            <td class="p-3 border-l border-slate-200 bg-slate-50/50"></td>
+                            <td class="p-3 border-l border-slate-200 bg-slate-50/50"></td>
+                        </tr>
+
+                        <!-- STREAMING_CHUNK:Rendering Thursday row with TAs and Location... -->
+                        <!-- Thursday -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 rounded-bl-lg">Thursday</td>
+                            
+                            <!-- PRA M -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA M</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1437</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. سلمى توفيق</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. الزهراء</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA P -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA P</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1440</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. سلمى توفيق</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. الزهراء</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA T -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA T</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1441</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. سلمى توفيق</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. الزهراء</span></div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- PRA Q -->
+                            <td class="p-3 border-l border-slate-200 align-top">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow border border-blue-700 h-full flex flex-col justify-between">
+                                    <div class="flex flex-col mb-3">
+                                        <div class="flex justify-between items-start mb-1.5">
+                                            <span class="font-bold text-lg">PRA Q</span>
+                                            <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1895</span>
+                                        </div>
+                                        <div class="text-xs text-blue-100 flex items-center gap-1.5 opacity-90">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                            <span>304 LB PH</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-700/50 rounded p-2 text-xs text-right" dir="rtl">
+                                        <div class="flex items-center gap-1.5 mb-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. سلمى توفيق</span></div>
+                                        <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="font-medium font-[Cairo]">م. يوسف اسامه</span></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```eof
