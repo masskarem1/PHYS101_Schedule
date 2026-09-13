@@ -4,7 +4,7 @@
     <!-- STREAMING_CHUNK:Configuring document metadata and loading dependencies... -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHYS.101 Schedule • Interactive Cards</title>
+    <title>PHYS.101 Schedule • Interactive & Sticky Cards</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Google Fonts (Inter & Cairo for Arabic) -->
@@ -25,6 +25,7 @@
         /* Custom scrollbar for the table wrapper */
         .table-container::-webkit-scrollbar {
             height: 8px;
+            width: 8px;
         }
         .table-container::-webkit-scrollbar-track {
             background: #f1f5f9;
@@ -47,7 +48,7 @@
         <div class="mb-8 text-center md:text-right flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
                 <h1 class="text-3xl font-bold text-slate-900 mb-2">جدول مقرر PHYS.101</h1>
-                <p class="text-slate-500 font-medium">الفصل الدراسي الخريفي 2026-2027 • <span class="text-indigo-600 font-bold">تفاعلي 🎴</span></p>
+                <p class="text-slate-500 font-medium">الفصل الدراسي الخريفي 2026-2027 • <span class="text-indigo-600 font-bold">تفاعلي 🎴 (Mobile Optimized)</span></p>
             </div>
             
             <!-- Legend (Key) -->
@@ -63,18 +64,20 @@
             </div>
         </div>
 
-        <!-- STREAMING_CHUNK:Creating the table structure and headers... -->
-        <!-- Table Wrapper for responsiveness -->
+        <!-- STREAMING_CHUNK:Creating the table structure and sticky headers... -->
+        <!-- Table Wrapper for responsiveness with fixed height for sticky header -->
         <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-            <div class="overflow-x-auto table-container w-full" dir="ltr">
+            <div class="overflow-auto table-container w-full max-h-[80vh]" dir="ltr">
                 <table class="w-full text-left border-collapse min-w-[1000px]">
                     <thead>
                         <tr class="bg-slate-800 text-white">
-                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 w-32">Day / Time</th>
-                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 1<br><span class="text-xs text-slate-300 font-normal">09:00 - 11:00</span></th>
-                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 2<br><span class="text-xs text-slate-300 font-normal">11:00 - 13:00</span></th>
-                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 3<br><span class="text-xs text-slate-300 font-normal">13:00 - 15:00</span></th>
-                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4">Period 4<br><span class="text-xs text-slate-300 font-normal">15:00 - 17:00</span></th>
+                            <!-- Sticky Top-Left Corner (z-40) -->
+                            <th class="py-4 px-2 md:px-4 font-semibold text-center border-b-2 border-slate-900 w-20 md:w-32 sticky top-0 left-0 z-40 bg-slate-900 shadow-[2px_2px_5px_rgba(0,0,0,0.3)]">Day / Time</th>
+                            <!-- Sticky Top Headers (z-30) -->
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4 sticky top-0 z-30 bg-slate-800 shadow-[0_2px_5px_rgba(0,0,0,0.2)]">Period 1<br><span class="text-xs text-slate-300 font-normal">09:00 - 11:00</span></th>
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4 sticky top-0 z-30 bg-slate-800 shadow-[0_2px_5px_rgba(0,0,0,0.2)]">Period 2<br><span class="text-xs text-slate-300 font-normal">11:00 - 13:00</span></th>
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4 sticky top-0 z-30 bg-slate-800 shadow-[0_2px_5px_rgba(0,0,0,0.2)]">Period 3<br><span class="text-xs text-slate-300 font-normal">13:00 - 15:00</span></th>
+                            <th class="py-4 px-4 font-semibold text-center border-b-2 border-slate-900 border-l border-slate-700 w-1/4 sticky top-0 z-30 bg-slate-800 shadow-[0_2px_5px_rgba(0,0,0,0.2)]">Period 4<br><span class="text-xs text-slate-300 font-normal">15:00 - 17:00</span></th>
                         </tr>
                     </thead>
                     <tbody class="en-text text-sm">
@@ -82,11 +85,12 @@
                         <!-- STREAMING_CHUNK:Rendering Saturday row... -->
                         <!-- Saturday -->
                         <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Saturday</td>
+                            <!-- Sticky Left Column (z-20) -->
+                            <td class="py-4 px-2 md:px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 sticky left-0 z-20 shadow-[2px_0_8px_-3px_rgba(0,0,0,0.15)]">Saturday</td>
                             
                             <!-- PRA F -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA F</span>
@@ -106,7 +110,7 @@
 
                             <!-- PRA R -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA R</span>
@@ -126,7 +130,7 @@
 
                             <!-- PRA O -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA O</span>
@@ -146,7 +150,7 @@
 
                             <!-- PRA G -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA G</span>
@@ -168,11 +172,11 @@
                         <!-- STREAMING_CHUNK:Rendering Sunday row... -->
                         <!-- Sunday -->
                         <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Sunday</td>
+                            <td class="py-4 px-2 md:px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 sticky left-0 z-20 shadow-[2px_0_8px_-3px_rgba(0,0,0,0.15)]">Sunday</td>
                             
                             <!-- PRA N -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA N</span>
@@ -192,7 +196,7 @@
 
                             <!-- PRA C -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA C</span>
@@ -212,7 +216,7 @@
 
                             <!-- PRA J -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA J</span>
@@ -232,7 +236,7 @@
 
                             <!-- PRA S -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA S</span>
@@ -254,11 +258,11 @@
                         <!-- STREAMING_CHUNK:Rendering Monday row with Interactive Stacked Cards... -->
                         <!-- Monday -->
                         <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Monday</td>
+                            <td class="py-4 px-2 md:px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 sticky left-0 z-20 shadow-[2px_0_8px_-3px_rgba(0,0,0,0.15)]">Monday</td>
                             
                             <!-- PRA H -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA H</span>
@@ -281,7 +285,8 @@
                                 <div class="relative w-full h-[170px] group">
                                     
                                     <!-- Card 1: LEC 3 (Default Top) -->
-                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-0 scale-100 shadow-xl brightness-100 z-10 bg-green-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-green-500 flex flex-col justify-between">
+                                    <!-- NOTE: Stacked cards within horizontal scrolling must not exceed sticky column z-index when overlapping. Used z-10 for front, z-0 for back. -->
+                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-0 scale-100 shadow-xl brightness-100 z-10 bg-green-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-green-500 flex flex-col justify-between hover:shadow-2xl">
                                         <div class="flex flex-col">
                                             <div class="flex justify-between items-start mb-2">
                                                 <span class="font-bold text-lg">LEC 3</span>
@@ -301,7 +306,7 @@
                                     </div>
 
                                     <!-- Card 2: PRA B (Default Bottom) -->
-                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-4 scale-95 shadow-md brightness-95 z-0 bg-blue-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-blue-700 flex flex-col justify-between">
+                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-4 scale-95 shadow-md brightness-95 z-0 bg-blue-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-blue-700 flex flex-col justify-between hover:brightness-100">
                                         <div class="flex flex-col mb-3">
                                             <div class="flex justify-between items-start mb-1.5">
                                                 <span class="font-bold text-lg">PRA B</span>
@@ -323,7 +328,7 @@
 
                             <!-- PRA D -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA D</span>
@@ -343,7 +348,7 @@
 
                             <!-- PRA A -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA A</span>
@@ -365,11 +370,11 @@
                         <!-- STREAMING_CHUNK:Rendering Tuesday row with Interactive Stacked Cards... -->
                         <!-- Tuesday -->
                         <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Tuesday</td>
+                            <td class="py-4 px-2 md:px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 sticky left-0 z-20 shadow-[2px_0_8px_-3px_rgba(0,0,0,0.15)]">Tuesday</td>
                             
                             <!-- PRA K -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA K</span>
@@ -389,7 +394,7 @@
 
                             <!-- PRA I -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA I</span>
@@ -412,7 +417,7 @@
                                 <div class="relative w-full h-[170px] group">
                                     
                                     <!-- Card 1: LEC 2 (Default Top) -->
-                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-0 scale-100 shadow-xl brightness-100 z-10 bg-green-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-green-500 flex flex-col justify-between">
+                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-0 scale-100 shadow-xl brightness-100 z-10 bg-green-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-green-500 flex flex-col justify-between hover:shadow-2xl">
                                         <div class="flex flex-col">
                                             <div class="flex justify-between items-start mb-2">
                                                 <span class="font-bold text-lg">LEC 2</span>
@@ -432,7 +437,7 @@
                                     </div>
 
                                     <!-- Card 2: PRA L (Default Bottom) -->
-                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-4 scale-95 shadow-md brightness-95 z-0 bg-blue-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-blue-700 flex flex-col justify-between">
+                                    <div onclick="bringToFront(this)" class="stack-card absolute inset-x-0 origin-top top-4 scale-95 shadow-md brightness-95 z-0 bg-blue-600 text-white rounded-lg p-3 transition-all duration-300 cursor-pointer border border-blue-700 flex flex-col justify-between hover:brightness-100">
                                         <div class="flex flex-col mb-3">
                                             <div class="flex justify-between items-start mb-1.5">
                                                 <span class="font-bold text-lg">PRA L</span>
@@ -454,7 +459,7 @@
 
                             <!-- PRA E -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA E</span>
@@ -476,11 +481,11 @@
                         <!-- STREAMING_CHUNK:Rendering Wednesday row... -->
                         <!-- Wednesday -->
                         <tr class="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200">Wednesday</td>
+                            <td class="py-4 px-2 md:px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 sticky left-0 z-20 shadow-[2px_0_8px_-3px_rgba(0,0,0,0.15)]">Wednesday</td>
                             
                             <!-- LEC 1 -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-green-600 text-white rounded-lg p-3 shadow-md border border-green-700">
+                                <div class="bg-green-600 text-white rounded-lg p-3 shadow-md border border-green-700 hover:shadow-lg transition-shadow">
                                     <div class="flex justify-between items-start mb-2">
                                         <span class="font-bold text-lg">LEC 1</span>
                                         <span class="text-xs bg-black/20 px-2 py-1 rounded shadow-inner font-medium">CRN: 1422</span>
@@ -507,11 +512,11 @@
                         <!-- STREAMING_CHUNK:Rendering Thursday row... -->
                         <!-- Thursday -->
                         <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-4 px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 rounded-bl-lg">Thursday</td>
+                            <td class="py-4 px-2 md:px-4 font-bold text-slate-700 bg-slate-100 text-center border-r border-slate-200 sticky left-0 z-20 shadow-[2px_0_8px_-3px_rgba(0,0,0,0.15)] rounded-bl-lg">Thursday</td>
                             
                             <!-- PRA M -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA M</span>
@@ -531,7 +536,7 @@
 
                             <!-- PRA P -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA P</span>
@@ -551,7 +556,7 @@
 
                             <!-- PRA T -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA T</span>
@@ -571,7 +576,7 @@
 
                             <!-- PRA Q -->
                             <td class="p-3 border-l border-slate-200 align-top">
-                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between">
+                                <div class="bg-blue-600 text-white rounded-lg p-3 shadow-md border border-blue-700 h-full flex flex-col justify-between hover:shadow-lg transition-shadow">
                                     <div class="flex flex-col mb-3">
                                         <div class="flex justify-between items-start mb-1.5">
                                             <span class="font-bold text-lg">PRA Q</span>
@@ -621,4 +626,3 @@
     </script>
 </body>
 </html>
-```eof
